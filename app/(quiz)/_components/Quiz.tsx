@@ -89,12 +89,12 @@ export default function Quiz({ mode, first }: { mode: Mode; first: number }) {
         <section className="overflow-clip rounded-3xl border-3 border-[#3a2e2b] bg-[#fffdf0] p-[3px] shadow-[0px_8px_0px_0px_#3a2e2b]">
           <div className="flex items-center gap-2 border-b-3 border-[#3a2e2b] bg-[#fcd875] px-4 pt-2.5 pb-[13px]">
             <span className="size-4 rounded-full border-2 border-[#3a2e2b] bg-[#ffa73b]" />
-            <span className="text-xs leading-4 font-bold tracking-[0.6px] uppercase">Pertanyaan</span>
+            <span className="text-xs leading-4 font-bold tracking-[0.6px] uppercase">Question</span>
           </div>
 
           <div className="flex min-h-[190px] flex-col items-center justify-center p-5 text-center">
             <p className="pb-1 text-xs leading-4 font-bold tracking-[0.6px] text-[#75594c] uppercase">
-              {toKana ? `Tulis dalam ${script}:` : "Tebak lafal / romaji:"}
+              {toKana ? `Write it in ${script}:` : "Type the reading in romaji:"}
             </p>
             <p className="py-2 font-kana text-[min(3.75rem,11vw)] leading-[1.1] font-black tracking-[-1.5px] [overflow-wrap:anywhere] text-[#442b76] drop-shadow-[0px_1px_0.5px_rgba(0,0,0,0.05)]">
               {toKana ? word.romaji : word.kana}
@@ -108,7 +108,7 @@ export default function Quiz({ mode, first }: { mode: Mode; first: number }) {
               )}
               {status === "wrong" && (
                 <p className="rounded-full border border-[#e5533d]/30 bg-[#e5533d]/10 px-[13px] py-[3px] font-kana text-lg leading-7 font-bold text-[#e5533d]">
-                  Salah!
+                  Wrong!
                 </p>
               )}
             </div>
@@ -127,8 +127,8 @@ export default function Quiz({ mode, first }: { mode: Mode; first: number }) {
               if (status === "wrong") setStatus("idle");
             }}
             readOnly={status === "correct"}
-            placeholder={toKana ? `Ketik ${script} di sini...` : "Ketik romaji di sini..."}
-            aria-label="Jawaban"
+            placeholder={toKana ? `Type ${script} here...` : "Type romaji here..."}
+            aria-label="Answer"
             autoComplete="off"
             autoCapitalize="off"
             spellCheck={false}
@@ -142,7 +142,7 @@ export default function Quiz({ mode, first }: { mode: Mode; first: number }) {
             className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-full border-3 border-[#3a2e2b] bg-[#ffe494] py-[17px] text-base leading-6 font-bold drop-shadow-[0px_5px_0px_#3a2e2b] transition-transform active:translate-y-1"
           >
             <Image src="/check.svg" alt="" width={20} height={20} />
-            {status === "correct" ? "LANJUT" : "KIRIM"}
+            {status === "correct" ? "NEXT" : "SUBMIT"}
           </button>
           {status !== "correct" && (
             <button
@@ -151,7 +151,7 @@ export default function Quiz({ mode, first }: { mode: Mode; first: number }) {
               className="flex w-full cursor-pointer items-center justify-center gap-1.5 rounded-full border-3 border-[#3a2e2b] bg-[#fff0e2] py-[17px] text-sm leading-5 font-bold text-[#944d30] drop-shadow-[0px_5px_0px_#3a2e2b] transition-transform active:translate-y-1"
             >
               <Image src="/skip.svg" alt="" width={16} height={16} />
-              MENYERAH
+              GIVE UP
             </button>
           )}
         </div>
@@ -161,14 +161,14 @@ export default function Quiz({ mode, first }: { mode: Mode; first: number }) {
         <div className="flex items-center justify-between rounded-2xl border-3 border-[#3a2e2b] bg-[#fffbea] p-[15px] text-xs leading-4 font-bold drop-shadow-[0px_3px_0px_#3a2e2b]">
           <div className="flex items-center gap-1.5">
             <span className="size-3 rounded-full bg-[#3b82f6]" />
-            Total Soal:
+            Questions:
             <span className="rounded-md border-2 border-[#3a2e2b] bg-white px-2.5 py-1 text-[#1e3a8a]">
               {total}
             </span>
           </div>
           <div className="flex items-center gap-1.5">
             <Image src="/wrong.png" alt="" width={14} height={14} />
-            Kesalahan:
+            Mistakes:
             <span className="rounded-md border-2 border-[#3a2e2b] bg-[#ffe4e6] px-2.5 py-1 text-[#9f1239]">
               {mistakes}
             </span>

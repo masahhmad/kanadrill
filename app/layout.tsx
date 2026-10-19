@@ -16,8 +16,8 @@ const kana = M_PLUS_Rounded_1c({
 });
 
 const home = pageMetadata(
-  "Kana Drill — Latihan Hiragana & Katakana",
-  "Latihan membaca dan menulis hiragana & katakana gratis lewat kuis kosakata acak lengkap dengan arti bahasa Indonesia: hiragana ke romaji, romaji ke hiragana, katakana ke romaji, dan romaji ke katakana.",
+  "Kana Drill — Hiragana & Katakana Practice",
+  "Free hiragana and katakana practice with random Japanese vocabulary quizzes and English meanings: hiragana to romaji, romaji to hiragana, katakana to romaji, and romaji to katakana.",
   "/",
 );
 
@@ -27,14 +27,14 @@ export const metadata: Metadata = {
   title: { default: home.title as string, template: `%s | ${siteName}` },
   applicationName: siteName,
   keywords: [
-    "latihan hiragana",
-    "latihan katakana",
-    "belajar hiragana",
-    "belajar katakana",
-    "kuis kana",
+    "hiragana practice",
+    "katakana practice",
+    "learn hiragana",
+    "learn katakana",
+    "kana quiz",
     "romaji",
-    "belajar bahasa Jepang",
-    "kosakata bahasa Jepang",
+    "learn Japanese",
+    "Japanese vocabulary",
   ],
 };
 
@@ -45,7 +45,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="id"
+      lang="en"
       className={`${fredoka.variable} ${kana.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">{children}</body>

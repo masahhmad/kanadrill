@@ -2,9 +2,9 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Kana Drill — Latihan Hiragana & Katakana",
+    name: "Kana Drill — Hiragana & Katakana Practice",
     short_name: "Kana Drill",
-    description: "Latihan hiragana dan katakana lewat kuis kosakata acak.",
+    description: "Hiragana and katakana practice with random vocabulary quizzes.",
     start_url: "/",
     display: "standalone",
     background_color: "#fca742",

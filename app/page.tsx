@@ -15,10 +15,10 @@ export default function Home() {
     >
       <header className="relative flex flex-col items-center gap-1 p-5">
         <h1 className="text-5xl leading-[60px] font-bold tracking-[2.4px] text-[#fffef2] uppercase [-webkit-text-stroke:5px_#1e1943] [paint-order:stroke_fill] text-shadow-[4px_4px_0px_#2a2259]">
-          Kana Drill
+          Kana Drilll
         </h1>
         <p className="rounded-full border-2 border-[#1e1943] bg-[#fffeec] px-[18px] py-1.5 text-xs leading-4 font-black tracking-[0.3px] text-[#1e1943] drop-shadow-[0px_4px_0px_#1e1943]">
-          🇯🇵 Latihan Kana
+          🇯🇵 Kana Practice
         </p>
       </header>
 
@@ -55,15 +55,15 @@ export default function Home() {
                     </h2>
                   </div>
                   <p className="text-xs leading-[19.5px] font-semibold text-[#374151]">
-                    Tebak {mode.to} dari {mode.from}
+                    Guess the {mode.to.toLowerCase()} from {mode.from.toLowerCase()}
                   </p>
                 </div>
                 <Link
                   href={`/${mode.from}-${mode.to}`.toLowerCase()}
-                  aria-label={`Mulai kuis ${mode.from} ke ${mode.to}`}
+                  aria-label={`Start the ${mode.from} to ${mode.to} quiz`}
                   className="flex shrink-0 items-center gap-1 rounded-full border-2 border-[#1e1943] bg-[#ffea9f] px-4 py-2.5 text-xs leading-4 font-bold text-[#1e1943] drop-shadow-[0px_3px_0px_#d89f1f] transition-transform active:translate-y-0.5"
                 >
-                  MULAI
+                  START
                   <Image src="/play.svg" alt="" width={14} height={14} />
                 </Link>
               </div>

@@ -10,9 +10,9 @@ export const siteUrl =
 
 export const siteName = "Kana Drill";
 
-const ogImage = { url: "/og.png", width: 1200, height: 630, alt: "Kana Drill — Latihan Hiragana & Katakana" };
+const ogImage = { url: "/og.png", width: 1200, height: 630, alt: "Kana Drill — Hiragana & Katakana Practice" };
 
-export const modeTitle = (mode: Mode) => modes[mode].label.replace(" ➔ ", " ke ");
+export const modeTitle = (mode: Mode) => modes[mode].label.replace(" ➔ ", " to ");
 
 /** Title, description, canonical, Open Graph and Twitter tags for one page. */
 export function pageMetadata(title: string, description: string, path: string): Metadata {
@@ -20,16 +20,16 @@ export function pageMetadata(title: string, description: string, path: string): 
     title,
     description,
     alternates: { canonical: path },
-    openGraph: { type: "website", locale: "id_ID", siteName, url: path, title, description, images: [ogImage] },
+    openGraph: { type: "website", locale: "en_US", siteName, url: path, title, description, images: [ogImage] },
     twitter: { card: "summary_large_image", title, description, images: [ogImage.url] },
   };
 }
 
 export function quizMetadata(mode: Mode): Metadata {
   const { script, toKana } = modes[mode];
-  const title = `Kuis ${modeTitle(mode)}`;
+  const title = `${modeTitle(mode)} Quiz`;
   const description = toKana
-    ? `Latihan menulis ${script}: ubah romaji kosakata Jepang menjadi ${script}. Soal acak, gratis, tanpa daftar.`
-    : `Latihan membaca ${script}: tebak romaji dari kosakata Jepang dan lihat artinya dalam bahasa Indonesia. Soal acak, gratis, tanpa daftar.`;
+    ? `Practice writing ${script}: turn the romaji of Japanese words into ${script}. Random questions, free, no sign-up.`
+    : `Practice reading ${script}: type the romaji of Japanese words and see their English meaning. Random questions, free, no sign-up.`;
   return pageMetadata(title, description, `/${mode}`);
 }
