@@ -79,10 +79,10 @@ export default function Quiz({ mode, first }: { mode: Mode; first: number }) {
           <Image src="/back.svg" alt="" width={16} height={16} />
           Home
         </Link>
-        <span className="flex items-center gap-1 rounded-full border-2 border-[#3a2e2b] bg-[#fffbea] px-3.5 py-1.5 text-xs leading-4 font-bold text-[#51387d] drop-shadow-[0px_3px_0px_#3a2e2b]">
+        <h1 className="flex items-center gap-1 rounded-full border-2 border-[#3a2e2b] bg-[#fffbea] px-3.5 py-1.5 text-xs leading-4 font-bold text-[#51387d] drop-shadow-[0px_3px_0px_#3a2e2b]">
           <span className="size-2 rounded-full bg-[#10b981]" />
           {label}
-        </span>
+        </h1>
       </header>
 
       <div className="pt-2 pb-3">

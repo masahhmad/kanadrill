@@ -60,6 +60,7 @@ export default function Home() {
                 </div>
                 <Link
                   href={`/${mode.from}-${mode.to}`.toLowerCase()}
+                  aria-label={`Mulai kuis ${mode.from} ke ${mode.to}`}
                   className="flex shrink-0 items-center gap-1 rounded-full border-2 border-[#1e1943] bg-[#ffea9f] px-4 py-2.5 text-xs leading-4 font-bold text-[#1e1943] drop-shadow-[0px_3px_0px_#d89f1f] transition-transform active:translate-y-0.5"
                 >
                   MULAI
