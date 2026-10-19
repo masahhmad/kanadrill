@@ -8,9 +8,9 @@ export const siteUrl =
     ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
     : "http://localhost:3000");
 
-export const siteName = "Kana Drill";
+export const siteName = "Kana Drilll";
 
-const ogImage = { url: "/og.png", width: 1200, height: 630, alt: "Kana Drill — Hiragana & Katakana Practice" };
+const ogImage = { url: "/og.png", width: 1200, height: 630, alt: "Kana Drilll — Hiragana & Katakana Practice" };
 
 export const modeTitle = (mode: Mode) => modes[mode].label.replace(" ➔ ", " to ");
 

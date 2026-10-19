@@ -16,7 +16,7 @@ const kana = M_PLUS_Rounded_1c({
 });
 
 const home = pageMetadata(
-  "Kana Drill — Hiragana & Katakana Practice",
+  "Kana Drilll — Hiragana & Katakana Practice",
   "Free hiragana and katakana practice with random Japanese vocabulary quizzes and English meanings: hiragana to romaji, romaji to hiragana, katakana to romaji, and romaji to katakana.",
   "/",
 );
