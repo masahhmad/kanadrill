@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { matchesRomaji } from "@/lib/kana";
+import { matchesKana, matchesRomaji } from "@/lib/kana";
 import { getWords, modes, pickNext, type Mode } from "@/lib/quiz";
 
 type Status = "idle" | "correct" | "wrong";
@@ -58,7 +58,7 @@ export default function Quiz({ mode, first }: { mode: Mode; first: number }) {
     if (status === "correct") return next();
     const answer = input.trim();
     if (!answer) return;
-    const correct = toKana ? answer === word.kana : matchesRomaji(word.kana, answer.toLowerCase());
+    const correct = toKana ? matchesKana(word.kana, answer) : matchesRomaji(word.kana, answer.toLowerCase());
     if (correct) return setStatus("correct");
     markMissed();
     setStatus("wrong");
